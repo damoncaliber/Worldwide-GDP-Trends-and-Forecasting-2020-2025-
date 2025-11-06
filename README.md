@@ -8,197 +8,127 @@ __Gross Domestic Product (GDP)__ is the total monetary value of all goods and se
 
 Understanding GDP provides insights into economic growth, living standards, and the health of different sectors within an economy. High GDP growth typically indicates a thriving economy, while stagnant or negative growth may signal recession or economic challenges. GDP can be expressed in nominal terms, which reflects current market prices, or real terms, which adjusts for inflation to allow comparisons over time. Additionally, GDP per capita offers a perspective on individual prosperity by dividing total GDP by the population. For global analyses, GDP is essential in assessing regional contributions, emerging market trends, and shifts in economic rankings, making it a critical metric for policy-making, investment decisions, and development planning.
 
-# Problem Statement
+### EXPLORATORY DATA ANALYSIS
 
-The global economy is dynamic and complex, with countries and regions contributing differently to worldwide production and wealth. Between 2020 and 2025, the world experienced significant economic fluctuations influenced by factors such as pandemic recovery, regional trade shifts, technological advancements, and emerging market growth. Understanding how GDP—one of the most critical measures of economic output—evolves over time is essential for identifying trends in economic power, investment opportunities, and global development patterns.
+### Global Economic Landscape & Recovery Patterns
 
-Despite the abundance of economic data, there remains a need to systematically analyze trends at both global and regional levels, uncover which countries are rising or falling in economic rankings, and highlight disparities between developed and emerging economies. By examining country-level GDP data across years, this project aims to provide actionable insights for policymakers, investors, and researchers, enabling them to make informed decisions based on historical trends, regional contributions, and shifts in economic dominance.
+These questions uncover how the world economy evolved post-2020 and where structural shifts occurred.
 
-This analysis is motivated by the desire to answer questions such as:
+How did the global GDP trajectory evolve from 2020 through 2025, and can we identify distinct recovery phases following the 2020 pandemic shock?
 
-Which regions are driving global GDP growth, and how has their share changed over time?
+Which years mark turning points in global economic performance, and what macroeconomic or geopolitical events coincide with them?
 
-Are there emerging economies that are gaining prominence in global rankings?
+Did the global economy experience synchronized recovery, or did some regions lag while others accelerated?
 
-How do economic shocks or recovery periods affect the distribution of wealth across continents?
+How concentrated is global GDP — are the top five economies continuing to dominate, or is global wealth distribution shifting?
 
-By tackling these questions, the project not only highlights the current state of global economic balance but also uncovers patterns and trends that can inform future strategies in investment, trade, and development planning.
+What percentage of global GDP growth between 2020 and 2025 was driven by emerging vs. developed economies?
 
-# Objectives
+### Continental and Regional Dynamics
 
-The main goal of this project is to analyze global GDP trends between 2020 and 2025 to understand how economic output is distributed across countries and regions, and how it evolves over time. Specifically, the project aims to answer the following key questions:
+These questions dig into regional disparities, growth momentum, and shifts in global power centers.
 
-### Global Trends:
+Which continents demonstrated the strongest GDP growth momentum post-2020, and how consistent was this across the period?
 
-How has total global GDP changed from 2020 to 2025?
+How did Africa’s and South America’s growth trajectories compare to Asia’s rebound — were they catching up or diverging further?
 
-What are the yearly growth rates, and are there periods of acceleration or slowdown?
+Which regions showed the greatest volatility in GDP growth, and what underlying structural factors might explain this?
 
-### Regional/Continental Contributions:
+Are regional growth patterns converging (more synchronized) or diverging (more unequal) over time?
 
-Which continents contribute the most to global GDP?
+How did regional contributions to total world GDP change year by year?
 
-How have these shares changed over the five-year period?
+### Country-Level Competitiveness and Performance Drivers
 
-### Country-Level Insights:
+These go beyond “top 10 economies” — focusing on patterns, trajectories, and outliers.
 
-Which countries contribute the most to global GDP and hold the largest share of economic output?
+Which economies consistently rank among the global top performers, and which have shown exceptional acceleration or decline?
 
-### Comparative Analysis:
+Which countries transitioned from negative growth in 2020 to sustained expansion, and what macro factors enabled that rebound?
 
-How do developed economies compare to emerging and developing economies in terms of growth and contribution?
+Are emerging economies narrowing the GDP gap with advanced nations, or is the gap widening post-2020?
 
-Are there noticeable disparities or convergences in continental performance?
+What are the defining characteristics (inflation, population, unemployment) of countries achieving above-average GDP growth?
 
-# Data Description
+How do small, resource-rich nations compare to large, diversified economies in terms of resilience and volatility?
 
-The dataset used in this project contains GDP values for 197 countries from 2020 to 2025, providing a comprehensive view of global economic performance. The data was sourced **Kaggle**, ensuring it reflects official and consistent economic statistics.
+### Temporal and Seasonal Patterns (Monthly or Quarterly Data)
 
-#### Structure of the dataset:
+These explore cyclicality, seasonality, and the rhythm of economic activity.
 
-##### Columns:
+Do GDP trends exhibit seasonal cycles — such as fiscal year effects or holiday-related expansions?
 
-Country – Name of the country.
+How do quarterly GDP shifts differ between advanced and emerging economies?
 
-Year – 2020, 2021, 2022, 2023, 2024, 2025 
+Are there specific quarters or months where global GDP tends to slow down or accelerate consistently?
 
-GDP – values in millions of USD for each year.
+Do external shocks (like inflation spikes or policy changes) show lagged effects in subsequent quarters?
 
-Continent – column (added via mapping) to group countries by region.
+Can we identify early-warning signals of slowdown or acceleration in the GDP timeline?
 
-Rows: Each row represents a single country’s GDP across the six years.
+### Structural Shifts and Economic Composition
 
-#### Data characteristics:
+If your dataset includes sectors or categories, these probe the composition of growth.
 
-Some GDP values are missing for certain countries and years due to incomplete reporting. These missing values were handled carefully during preprocessing.
+Which sectors (e.g., manufacturing, services, technology) contributed most to GDP growth post-2020?
 
-The data was initially in wide format (one column per year) and reshaped into long format (columns: Country | Year | GDP) to facilitate analysis.
+How did the pandemic reshape the balance between goods-producing and service-oriented economies?
 
-Special cases like __Kosovo__ and __Timor-Leste__ were manually assigned continents because automated mapping tools (pycountry_convert) did not recognize them.
+Are we seeing a shift toward digital and knowledge economies in GDP composition?
 
-Why this dataset is useful:
+How did trade disruptions or energy transitions affect GDP contributions by sector or region?
 
-It allows for temporal analysis (GDP trends over years) and cross-country comparison.
+### External Macroeconomic Drivers
 
-Enables regional aggregation to study continental contributions to global GDP.
+These connect GDP trends to inflation, unemployment, energy prices, and fiscal stability.
 
-Supports the analysis of rank changes, identifying emerging economies and shifts in global economic power.
+How strongly does GDP correlate with inflation (CPI), unemployment, or fuel prices during 2020–2025?
 
-# Data Cleaning & Preparation
+Do high inflation environments necessarily translate to weaker GDP growth, or do some countries grow despite inflationary pressures?
 
-Before performing any analysis, the raw GDP dataset required cleaning and restructuring to ensure accuracy and consistency. Key steps included:
+Are countries with low unemployment achieving proportionally higher GDPs, or are there diminishing returns?
 
-#### Reshaping the Dataset:
+What macroeconomic variables most effectively explain GDP fluctuations across the period?
 
-The original dataset was in wide format, with one column per year (2020, 2021, …, 2025).
+Can changes in unemployment or CPI serve as leading indicators for future GDP changes?
 
-It was converted into long format using pd.melt(), resulting in three columns: Country | Year | GDP. This makes it easier to analyze trends over time.
+### Inequality and Distribution of Global Output
 
-#### Handling Missing Values:
+These address concentration, disparity, and structural inequality.
 
-Some countries had missing GDP values for certain years.
+How uneven is the distribution of global GDP among countries — and is inequality increasing or decreasing?
 
-These were imputed using the mean GDP of the respective continent for that year, maintaining overall data consistency while avoiding bias.
+What portion of global GDP is held by the top 10 economies versus the rest of the world?
 
-#### Mapping Countries to Continents:
+Have smaller economies gained relative global share, or are they stagnating?
 
-Using the pycountry_convert library, countries were assigned to their respective continents.
+Which regions show the widest intra-regional disparities in GDP per capita?
 
-Special cases like Kosovo and Timor-Leste were manually assigned, as the library did not recognize them.
+### Forecasting and Predictive Analysis
 
-#### Data Type Conversion:
+These set the stage for your time-series forecasting section.
 
-The Year column was converted to integers, and GDP to numeric type to facilitate calculations and visualizations.
+Based on historical trends, what is the projected GDP trajectory through 2026 or 2027?
 
-#### Validation:
+Which model (ARIMA, SARIMA, SARIMAX) provides the most reliable fit for global GDP forecasting?
 
-Checked for duplicates and outliers to ensure no erroneous data would skew the analysis.
+How do exogenous variables such as CPI and Unemployment enhance forecast accuracy?
 
-##### Why these steps matter:
+Do model forecasts suggest continued growth, stagnation, or new risks of contraction?
 
-Reshaping allows flexible time-series and comparative analysis.
+How sensitive is the GDP forecast to external shocks like inflation or interest rate changes?
 
-Imputing missing values ensures that trends and regional aggregations are meaningful.
+### Strategic Insights & Recommendations
 
-Mapping to continents enables analysis at both country and regional levels, which is essential for understanding global economic contributions.
+These are the “so what” questions that make your project executive-ready.
 
-# Exploratory Data Analysis (EDA)
+What regions or economies are best positioned for sustainable long-term growth?
 
-The EDA phase focuses on understanding global GDP trends, regional/continental contributions, and country-level dynamics from 2020 to 2025, aiming to address the project's objectives through data-driven insights and well-structured visualizations.
+What risk factors could threaten continued global expansion post-2025?
 
-### Global Trends:
-###### How has total global GDP changed from 2020 to 2025?
+How can policymakers or investors use these insights to prioritize investment or policy interventions?
 
-![GDP 2020-2025](https://github.com/damoncaliber/Global-GDP-2020-2025-Analysis/blob/main/Raw_data/Global_Trend.png)
-
-The line plot of global GDP from 2020 to 2025 shows a consistent upward trend, reflecting overall growth in the world economy. This increase is likely driven by several factors, including recovery from the economic slowdowns experienced during the early 2020s, expansion in major economies such as the US, China, and India, and growth in emerging markets that contributed to higher production, trade, and investment levels. Additionally, technological advancements, increased industrial output, and improved service sectors in many countries may have further supported the rise in total global GDP over this period.
-
-###### What are the yearly growth rates, and are there periods of acceleration or slowdown?
-
-![Yearly_GrowthRate](https://github.com/damoncaliber/Global-GDP-2020-2025-Analysis/blob/main/Raw_data/Global_GrowthRate.png)
-
-### Regional Contributions:
-
-###### How evenly is GDP distributed across continents — is global wealth concentrated in a few regions or more balanced?
-
-![GDP_Share_By_Continent](https://github.com/damoncaliber/Global-GDP-2020-2025-Analysis/blob/main/Raw_data/GDP_Share_by_Continent.png)
-
-The donut chart highlights the global distribution of GDP by continent, showing Asia as the leading contributor with 37.9%, followed by North America (30.0%) and Europe (23.7%). These regions dominate global economic activity, while Africa (2.9%), South America (3.7%), and Oceania (1.8%) play smaller roles. When combined with the earlier trends observed in the line plot, it is evident that global economic growth is largely driven by Asia and North America, with emerging markets gradually gaining momentum. This emphasizes both the concentration of wealth in major economies and the potential for growth in underrepresented regions, providing a comprehensive perspective on global economic dynamics.
-
-###### Is the global GDP distribution becoming more balanced or more concentrated over time?
-
-![GDP_Across_continets](https://github.com/damoncaliber/Global-GDP-2020-2025-Analysis/blob/main/Raw_data/GDP_Across_Continents.png)
-
-###### How is GDP distributed across continents over time?
-![GDP_Trends](https://github.com/damoncaliber/Global-GDP-2020-2025-Analysis/blob/main/Raw_data/Trends_by_Continent.png)
-
-###### How do the Top 5 global economies compare to the rest of the world in total GDP between 2020 and 2025?
-![Top5Vs_Rest_World](https://github.com/damoncaliber/Global-GDP-2020-2025-Analysis/blob/main/Raw_data/Top5vsRest_of_World.png)
-
-
-#### Country-Level Analysis:
-
-###### How is global GDP distributed across the top 10 countries in 2025?
-![Top_10_Countries](https://github.com/damoncaliber/Global-GDP-2020-2025-Analysis/blob/main/Raw_data/Top10.png)
-
-###### How is global GDP distributed across the bottom 10 countries in 2025?
-![Bottom_10_Countries](https://github.com/damoncaliber/Global-GDP-2020-2025-Analysis/blob/main/Raw_data/Bottom10.png)
-
-### Comparative Insights:
-
-Emerging economies were compared to developed nations to understand shifts in global economic power.
-
-Continental and country-level comparisons highlighted disparities, growth patterns, and potential investment opportunities.
-
-# Conclusion & Recommendations
-
-The GDP analysis from 2020 to 2025 highlights clear trends in global economic performance and regional contributions. Key conclusions include:
-
-#### Global Growth:
-
-Total global GDP steadily increased over the period, demonstrating economic resilience and gradual recovery from disruptions.
-
-#### Regional Dominance:
-
-Asia, North America, and Europe dominate global GDP, while Africa and Oceania contribute relatively smaller shares, emphasizing global economic inequality.
-
-#### Emerging Economies & Rank Changes:
-
-Some countries, such as Eritrea and Afghanistan, experienced significant rank improvements, indicating growing economic influence.
-
-Conversely, countries like Nigeria and Yemen saw declines, suggesting economic challenges and volatility.
-
-#### Strategic Insights:
-
-The analysis highlights regions and countries that are key drivers of global economic output, as well as those requiring targeted attention or investment.
-
-Policymakers, investors, and global organizations can leverage these insights for decision-making, forecasting, and strategic planning.
-
-#### Overall:
-
-This project provides a comprehensive overview of the global economic landscape, illustrating trends, disparities, and shifts in economic power.
-
-Visualizations and rank analysis complement raw GDP data, making patterns clear and actionable.
+Which indicators should be monitored going forward as early signals of economic turning points?
 
 # References & Resources
 
