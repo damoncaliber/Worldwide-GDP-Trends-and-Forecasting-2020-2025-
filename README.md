@@ -1,6 +1,6 @@
 # Global Economic Pulse: A GDP Analysis and Forecasting Study
 
-![World Map]()
+![World Map](https://github.com/damoncaliber/Worldwide-GDP-Trends-and-Forecasting-2020-2025-/blob/main/Raw_data/World-Map-showing-Nominal-GDP-12.png)
 
 ## INTRODUCTION
 Gross Domestic Product (GDP) serves as the primary gauge of a nation’s economic vitality — capturing the total value of goods and services produced within its borders. It not only reflects current performance but also reveals how economies evolve, recover, and compete on the global stage.
