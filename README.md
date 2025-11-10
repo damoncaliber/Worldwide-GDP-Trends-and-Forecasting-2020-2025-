@@ -1,4 +1,4 @@
-# Global Economic Pulse: A GDP Analysis and Forecasting Study
+# Global Economic Dynamics: GDP Growth Patterns & Forecasts 
 
 ![World Map](https://github.com/damoncaliber/Worldwide-GDP-Trends-and-Forecasting-2020-2025-/blob/main/Raw_data/World-Map-showing-Nominal-GDP-12.png)
 
